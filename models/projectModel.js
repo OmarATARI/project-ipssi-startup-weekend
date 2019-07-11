@@ -1,20 +1,10 @@
+// importation est de mongoose
 const mongoose = require('mongoose');
 
+// initialisation du schéma mongoose
 const Schema = mongoose.Schema;
 
-let projectSchema = new Schema({
-  projectName: {
-    type: String,
-    required: 'nom de projet requis'
-  },
-  projectDescription: {
-    type: String,
-    required: 'Une description est requise'
-  },
-  studentCreator: student,
-  studentsAttendees: [student]
-});
-
+// student : schéma étudiant
 let student = new Schema({
   lastName: {
     type: String,
@@ -30,5 +20,23 @@ let student = new Schema({
   }
 });
 
+  /*
+  projectSchema: schéma projet
+  student : schéma étudiant (utilisé)
+  */
+let projectSchema = new Schema({
+  projectName: {
+    type: String,
+    required: 'nom de projet requis'
+  },
+  projectDescription: {
+    type: String,
+    required: 'Une description est requise'
+  },
+  studentCreator: student,
+  studentsAttendees: [student]
+});
+
+//export des schémas
 module.exports = mongoose.model('studentSchema', student);
 module.exports = mongoose.model('projectSchema', projectSchema);
