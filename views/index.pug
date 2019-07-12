@@ -1,0 +1,27 @@
+html
+    head
+        title= title
+
+    body
+        h1= message
+        form#registerForm
+            p
+            label Titre du projet :
+            input#projectName(type="text", name="projectName" required)
+            p
+            label Description du projet :
+            textarea#projectDescription(required="true", name="projectDescription")
+            p
+            label Prenom de l'organiseur :
+            input#organiserFirstname(type="text", name="organiserFirstname" required="true")
+            p
+            label Nom de l'organisateur :
+            input#organiserLastname(type="text", name="organiserLastname" required="true")
+            p
+            label Email de l'organisateur :
+            input#organiserEmail(type="email", name="organiserEmail" required="true")
+            p
+            button#addAttendee(type='button') Ajouter un participant (5 max)
+            p
+            button#submitButton(type='submit') Valider
+        script(src='js/form.js')
