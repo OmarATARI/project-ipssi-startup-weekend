@@ -1,12 +1,13 @@
 module.exports = (app) => {
     const pageController = require('../controllers/pageController');
 
-    app.route('/').get(pageController.displayForm);
+    // formulaire d'inscription et enregistrement
+    app.route('/')
+  .get(pageController.displayForm)
+  .post(pageController.registerProject);
 
-    /*  Possiblement une route pour l'admin
+    // affichage des projets
+    app.route('/projects')
+  .get(pageController.displayAll);
 
-    app.route('/blocks/:blockId')
-        .get(blockController.readABlock)
-        .put(blockController.updateABlock)
-        .delete(blockController.deleteABlock);*/
 };
