@@ -53,17 +53,18 @@ registerForm.addEventListener('submit', (e) => {
     }
     console.log(attendees);
 
-
     let projectData = {
-        projectName: registerForm.elements.projectName,
-        projectDescription: registerForm.elements.projectDescription,
-        organiser: {
-            firstname: registerForm.elements.organiserFirstname,
-            lastname: registerForm.elements.organiserLastname,
-            email: registerForm.elements.organiserEmail
+        AprojectName: registerForm.elements.projectName.value,
+        BprojectDescription: registerForm.elements.projectDescription.value,
+        Corganiser: {
+            firstname: registerForm.elements.organiserFirstname.value,
+            lastname: registerForm.elements.organiserLastname.value,
+            email: registerForm.elements.organiserEmail.value
         },
-        attendees: attendees
+        Dattendees: attendees
     };
+
+    console.log(projectData);
 
     let req = new XMLHttpRequest();
     req.open("POST", '/');

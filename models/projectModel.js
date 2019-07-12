@@ -37,21 +37,6 @@ let projectSchema = new Schema({
   studentsAttendees: [student]
 });
 
-/*
-  adminBoSchema: schéma utilisateur
-*/
-let adminBoSchema = new Schema({
-  pseudo: {
-    type: String,
-    required: 'Pseudonyme requis'
-  },
-  password: {
-    type: String,
-    required: 'Mot de passe requis'
-  }
-});
-
 //export des schémas
 module.exports = mongoose.model('studentSchema', student);
 module.exports = mongoose.model('projectSchema', projectSchema);
-module.exports = mongoose.model('adminBackofficeSchema', adminBoSchema);
