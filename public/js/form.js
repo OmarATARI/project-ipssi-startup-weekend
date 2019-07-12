@@ -3,6 +3,12 @@ let submit = document.getElementById('submitButton');
 let addAttendee = document.getElementById('addAttendee');
 let attendeeCounter = 0;
 
+/* Gestionnaire d'evenement qui remplit 3 fonctions :
+*  Génération "dynamique" du tableau d'objets correspondant aux participants supplémentaires
+*  Création d'un objet au format du modèle
+*  Envoie au serveur de l'objet avec transformation en JSON
+* */
+
 registerForm.addEventListener('submit', (e) => {
     //console.log(registerForm.elements[0].value);
     e.preventDefault();
@@ -55,23 +61,28 @@ registerForm.addEventListener('submit', (e) => {
 
 
     let projectData = {
-        projectName: registerForm.elements.projectName,
-        projectDescription: registerForm.elements.projectDescription,
-        organiser: {
-            firstname: registerForm.elements.organiserFirstname,
-            lastname: registerForm.elements.organiserLastname,
-            email: registerForm.elements.organiserEmail
+        AprojectName: registerForm.elements.projectName.value,
+        BprojectDescription: registerForm.elements.projectDescription.value,
+        Corganiser: {
+            firstname: registerForm.elements.organiserFirstname.value,
+            lastname: registerForm.elements.organiserLastname.value,
+            email: registerForm.elements.organiserEmail.value
         },
-        attendees: attendees
+        Dattendees: attendees
     };
-
+    //console.log(projectData.organiser);
     let req = new XMLHttpRequest();
     req.open("POST", '/');
     req.setRequestHeader("Content-Type", "application/json");
     projectData = JSON.stringify(projectData);
+    console.log(projectData);
     req.send(projectData);
 
 });
+
+/* Gestionnaire d'évènement qui rajoute 3 inputs pour ajouter un participant
+*  L'evènement n'est plus pris en compte à partir du moment où un 5ème participant est ajouté
+* */
 
 addAttendee.addEventListener('click', function onAdd(e) {
     attendeeCounter++;
