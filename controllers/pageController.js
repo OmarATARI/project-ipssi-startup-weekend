@@ -11,6 +11,7 @@ exports.displayForm = (req, res) => {
 exports.registerProject = (req, res) => {
   let new_project = new Project(req.body);
 
+    console.log("toto",req.body);
     new_project.save((err, project) => {
       if(err){
         res.status(400);
@@ -18,7 +19,7 @@ exports.registerProject = (req, res) => {
       }
       else{
         res.json(project);
-        console.log(res.json(project));
+        //console.log(res.json(project));
       }
     })
 };

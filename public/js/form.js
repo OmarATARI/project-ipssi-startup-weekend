@@ -10,58 +10,58 @@ registerForm.addEventListener('submit', (e) => {
     if(attendeeCounter > 0) {
         switch(attendeeCounter) {
             case 1:
-                attendees.push({firstname: registerForm.elements[5].value,
-                                lastname: registerForm.elements[6].value, email: registerForm.elements[7].value});
+                attendees.push({firstName: registerForm.elements[5].value,
+                                lastName: registerForm.elements[6].value, email: registerForm.elements[7].value});
                 break;
             case 2:
-                attendees.push({firstname: registerForm.elements[5].value,
-                    lastname: registerForm.elements[6].value, email: registerForm.elements[7].value},
-                    {firstname: registerForm.elements[8].value,
-                        lastname: registerForm.elements[9].value, email: registerForm.elements[10].value});
+                attendees.push({firstName: registerForm.elements[5].value,
+                    lastName: registerForm.elements[6].value, email: registerForm.elements[7].value},
+                    {firstName: registerForm.elements[8].value,
+                        lastName: registerForm.elements[9].value, email: registerForm.elements[10].value});
                 break;
             case 3:
-                attendees.push({firstname: registerForm.elements[5].value,
-                        lastname: registerForm.elements[6].value, email: registerForm.elements[7].value},
-                    {firstname: registerForm.elements[8].value,
-                        lastname: registerForm.elements[9].value, email: registerForm.elements[10].value},
-                    {firstname: registerForm.elements[11].value,
-                        lastname: registerForm.elements[12].value, email: registerForm.elements[13].value});
+                attendees.push({firstName: registerForm.elements[5].value,
+                        lastName: registerForm.elements[6].value, email: registerForm.elements[7].value},
+                    {firstName: registerForm.elements[8].value,
+                        lastName: registerForm.elements[9].value, email: registerForm.elements[10].value},
+                    {firstName: registerForm.elements[11].value,
+                        lastName: registerForm.elements[12].value, email: registerForm.elements[13].value});
                 break;
             case 4:
-                attendees.push({firstname: registerForm.elements[5].value,
-                        lastname: registerForm.elements[6].value, email: registerForm.elements[7].value},
-                    {firstname: registerForm.elements[8].value,
-                        lastname: registerForm.elements[9].value, email: registerForm.elements[10].value},
-                    {firstname: registerForm.elements[11].value,
-                        lastname: registerForm.elements[12].value, email: registerForm.elements[13].value},
-                    {firstname: registerForm.elements[14].value,
-                        lastname: registerForm.elements[15].value, email: registerForm.elements[16].value});
+                attendees.push({firstName: registerForm.elements[5].value,
+                        lastName: registerForm.elements[6].value, email: registerForm.elements[7].value},
+                    {firstName: registerForm.elements[8].value,
+                        lastName: registerForm.elements[9].value, email: registerForm.elements[10].value},
+                    {firstName: registerForm.elements[11].value,
+                        lastName: registerForm.elements[12].value, email: registerForm.elements[13].value},
+                    {firstName: registerForm.elements[14].value,
+                        lastName: registerForm.elements[15].value, email: registerForm.elements[16].value});
                 break;
             case 5:
-                attendees.push({firstname: registerForm.elements[5].value,
-                        lastname: registerForm.elements[6].value, email: registerForm.elements[7].value},
-                    {firstname: registerForm.elements[8].value,
-                        lastname: registerForm.elements[9].value, email: registerForm.elements[10].value},
-                    {firstname: registerForm.elements[11].value,
-                        lastname: registerForm.elements[12].value, email: registerForm.elements[13].value},
-                    {firstname: registerForm.elements[14].value,
-                        lastname: registerForm.elements[15].value, email: registerForm.elements[16].value},
-                    {firstname: registerForm.elements[17].value,
-                        lastname: registerForm.elements[18].value, email: registerForm.elements[19].value});
+                attendees.push({firstName: registerForm.elements[5].value,
+                        lastName: registerForm.elements[6].value, email: registerForm.elements[7].value},
+                    {firstName: registerForm.elements[8].value,
+                        lastName: registerForm.elements[9].value, email: registerForm.elements[10].value},
+                    {firstName: registerForm.elements[11].value,
+                        lastName: registerForm.elements[12].value, email: registerForm.elements[13].value},
+                    {firstName: registerForm.elements[14].value,
+                        lastName: registerForm.elements[15].value, email: registerForm.elements[16].value},
+                    {firstName: registerForm.elements[17].value,
+                        lastName: registerForm.elements[18].value, email: registerForm.elements[19].value});
                 break;
         }
     }
     console.log(attendees);
 
     let projectData = {
-        AprojectName: registerForm.elements.projectName.value,
-        BprojectDescription: registerForm.elements.projectDescription.value,
-        Corganiser: {
-            firstname: registerForm.elements.organiserFirstname.value,
-            lastname: registerForm.elements.organiserLastname.value,
+        projectName: registerForm.elements.projectName.value,
+        projectDescription: registerForm.elements.projectDescription.value,
+        studentCreator: {
+            firstName: registerForm.elements.organiserFirstname.value,
+            lastName: registerForm.elements.organiserLastname.value,
             email: registerForm.elements.organiserEmail.value
         },
-        Dattendees: attendees
+        studentsAttendees: attendees
     };
 
     console.log(projectData);
