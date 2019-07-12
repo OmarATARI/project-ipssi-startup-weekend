@@ -5,11 +5,7 @@ const mongoose = require('mongoose');
 const Project = require('../models/projectModel');
 
 exports.displayForm = (req, res) => {
-   //res.render('../views/index');
-    Project.find({}, (err, project) => {
-    if(err) res.end(err);
-    res.json(project);
-  });
+   res.render('index',{ title: 'Hey', message: 'Hello there!' });
 };
 
 exports.registerProject = (req, res) => {
@@ -25,3 +21,10 @@ exports.registerProject = (req, res) => {
       }
     })
 };
+
+exports.displayAll = (req, res) => {
+    Project.find({}, (err, project) => {
+  if(err) res.end(err);
+  res.json(project);
+  });
+}
